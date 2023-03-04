@@ -73,30 +73,37 @@
     <dependency>
       <groupId>org.drools</groupId>
       <artifactId>drools-core</artifactId>
+      <version>${version.org.drools}</version>
     </dependency>
     <dependency>
       <groupId>org.drools</groupId>
       <artifactId>drools-compiler</artifactId>
+      <version>${version.org.drools}</version>
     </dependency>
     <dependency>
       <groupId>org.drools</groupId>
       <artifactId>drools-mvel</artifactId>
+      <version>${version.org.drools}</version>
     </dependency>
     <dependency>
       <groupId>org.drools</groupId>
       <artifactId>drools-traits</artifactId>
+      <version>${version.org.drools}</version>
     </dependency>
     <dependency>
       <groupId>org.drools</groupId>
       <artifactId>drools-tms</artifactId>
+      <version>${version.org.drools}</version>
     </dependency>
     <dependency>
       <groupId>org.drools</groupId>
       <artifactId>drools-decisiontables</artifactId>
+      <version>${version.org.drools}</version>
     </dependency>
     <dependency>
       <groupId>org.drools</groupId>
       <artifactId>drools-templates</artifactId>
+      <version>${version.org.drools}</version>
     </dependency>
   </dependencies>
   <build>
