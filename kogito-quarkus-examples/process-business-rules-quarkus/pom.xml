@@ -98,7 +98,6 @@
       <groupId>org.drools</groupId>
       <artifactId>drools-templates</artifactId>
     </dependency>
-    <dependency>
   </dependencies>
   <build>
     <finalName>${project.artifactId}</finalName>
