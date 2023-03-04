@@ -24,3 +24,36 @@ then
     	setAdult(true) 
     };
 end
+
+rule "multi-paths"
+	dialect "mvel"
+	when
+	    fact2 : Query_Path( )
+		fact0 : Path( start == fact2.start )
+		fact1 : Path( start == fact0.end, end != fact0.start )
+		not Path( start == fact0.start, end == fact1.end, cost < (fact0.cost + fact1.cost) )
+	then
+		Path fact3 = new Path();
+		fact3.setStart( fact0.getStart() );
+		fact3.setEnd( fact1.getEnd() );
+		fact3.setCost( fact0.getCost() + fact1.getCost() );
+		fact3.setChild_left( fact0 )
+		fact3.setChild_right( fact1 )
+		fact3.setRecord( fact0.getRecord() + ' ==> ' + fact1.getRecord() )
+		insertLogical( fact3 );
+end
+
+rule "find-solution"
+	dialect "mvel"
+	when
+	    fact0 : Query_Path( )
+		fact1 : Path( start == fact0.start, end == fact0.end )
+		not Path( start == fact0.start, end == fact0.end, cost < fact1.cost )
+	then
+		Solution fact2 = new Solution();
+		fact2.setStart( fact1.getStart() );
+		fact2.setEnd( fact1.getEnd() );
+		fact2.setCost( fact1.getCost() );
+		fact2.setPath( fact1.getRecord() )
+		insertLogical( fact2 );
+end
