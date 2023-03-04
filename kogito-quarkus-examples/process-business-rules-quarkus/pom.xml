@@ -39,7 +39,7 @@
       </dependency>
       <dependency>
         <groupId>org.drools</groupId>
-        <artifactId>drools-bom</artifactId>
+        <artifactId>drools-tms</artifactId>
         <version>${version.org.drools}</version>
         <type>pom</type>
         <scope>import</scope>
