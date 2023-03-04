@@ -1,6 +1,6 @@
 package org.acme.travels;
 
-public class Person {
+public class Path {
 
 	private java.lang.String start;
 	private java.lang.String end;
