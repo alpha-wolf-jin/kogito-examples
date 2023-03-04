@@ -21,8 +21,13 @@ import org.drools.ruleunits.api.RuleUnitData;
 
 public class PersonValidationService implements RuleUnitData {
     private DataStore<Person> persons = DataSource.createStore();
+    private DataStore<Path> paths = DataSource.createStore();
 
     public DataStore<Person> getPersons() {
         return persons;
+    }
+
+    public DataStore<Path> getPaths() {
+        return paths;
     }
 }
